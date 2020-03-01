@@ -6,4 +6,6 @@
 [Issues]: https://github.com/jangwonyoon/Codestates-study/issues
 
 
+👉👉[Algorithm] 메뉴에서 확인해주세요.😊😊
+
 [Algorithm]: https://github.com/jangwonyoon/CodeStates-Study/tree/master/_Algorithm
