@@ -5,7 +5,10 @@
 
 [Issues]: https://github.com/jangwonyoon/Codestates-study/issues
 
+<br></br>
 
 👉👉JavaScript Algorithm 은 [Algorithm] 메뉴에서 확인해주세요.😊😊
 
 [Algorithm]: https://github.com/jangwonyoon/CodeStates-Study/tree/master/_Algorithm
+
+## 코드에 대한 질문 항상 환영입니다.
