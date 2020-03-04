@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>유효성 검사</title>
+
+        <style>
+        .contents-input{
+            display: flex;
+            text-align: center;
+        }
+        #contents{
+            background-color:grey;
+        }
+
+        
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="contents">
+                <ul>
+                    <span class="contents-input">
+                        이름<input type="text" id="firstName"> 
+                        <button id="confirm">확인</button>
+                    </span>
+                    <span class="contents-input">
+                        주민등록번호 뒷자리 <input type="password" id = "identity"> 
+                        <button id="Lastconfirm">확인</button>
+                    </span>
+
+                    <span class="contents-input">
+                        주민등록번호 확인 <input type="password" id = "identity-second"> 
+                        <button id="identityConfirm">확인</button>
+                    </span>
+                 
+                </ul>
+            </div>
+
+            <div id="button">
+                <button id="back">
+                    back
+                </button>
+
+                <button id="finish">
+                    finish
+                </button>
+            <div>
+        </div>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>
