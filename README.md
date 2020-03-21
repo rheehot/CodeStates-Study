@@ -9,3 +9,6 @@
 
 [Algorithm]: https://github.com/jangwonyoon/CodeStates-Study/tree/master/_Algorithm
 
+* 👉👉Immersive course는 [immersive] 메뉴에서 확인해주세요.😊😊
+
+[immersive]: https://github.com/jangwonyoon/CodeStates-Study/immersive
