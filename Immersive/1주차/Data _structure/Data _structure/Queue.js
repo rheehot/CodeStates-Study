@@ -102,7 +102,7 @@ queueMethods.size = function() {
   return this.rear - this.front;
 };
 
-//psedoclassical
+//psedoclassical 방식
 
 const Queue = function() {
   this.front = 0;
