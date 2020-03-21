@@ -102,3 +102,29 @@ queueMethods.size = function() {
   return this.rear - this.front;
 };
 
+//psedoclassical
+
+const Queue = function() {
+  this.front = 0;
+  this.rear = 0;
+  this.storage = {};
+};
+
+Queue.prototype.enqueue = function(value) {
+  this.rear++;
+  this.storage[this.rear] = value;
+};
+
+Queue.prototype.dequeue = function() {
+  if (this.rear === this.front) {
+    return "empty";
+  }
+  this.front++;
+  return this.storage[this.front];
+};
+
+Queue.prototype.size = function() {
+  return this.rear - this.front;
+};
+
+
