@@ -11,4 +11,4 @@
 
 * 👉👉Immersive course는 [immersive] 메뉴에서 확인해주세요.😊😊
 
-[immersive]: https://github.com/jangwonyoon/CodeStates-Study/immersive
+[immersive]: https://github.com/jangwonyoon/CodeStates-Study/Immersive
