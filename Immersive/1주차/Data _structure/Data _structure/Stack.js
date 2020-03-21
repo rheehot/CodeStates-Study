@@ -37,10 +37,6 @@ if (typeof module === "object" && typeof module.exports === "object") {
 
 
 
-
-
-
-
 // functional- shared 방식
 const Stack = function() {
  
@@ -105,3 +101,28 @@ stackMethods.pop = function() {
 stackMethods.size = function() {
   return this.top;
 };
+
+// psedoclassical 방식
+
+const Stack = function() {
+  this.top = 0;
+  this.storage = {};
+};
+
+Stack.prototype.push = function(value) {
+  this.top++;
+  this.storage[this.top] = value;
+};
+
+Stack.prototype.pop = function() {
+  if (this.top === 0) {
+    return "empty";
+  }
+  this.top--;
+  return this.storage[this.top + 1];
+};
+
+Stack.prototype.size = function() {
+  return this.top;
+};
+
