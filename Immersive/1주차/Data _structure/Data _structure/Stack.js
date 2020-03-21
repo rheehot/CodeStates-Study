@@ -5,12 +5,10 @@
 
 const Stack = function() {
   const someInstance = {};
-
-  // Use an object with numeric keys to store values
+  
   var storage = {};
   let count = 0;
 
-  // Implement the methods below
   someInstance.push = function(value) {
     count++;
     storage[count] = value;
@@ -45,8 +43,7 @@ if (typeof module === "object" && typeof module.exports === "object") {
 
 // functional- shared 방식
 const Stack = function() {
-  // Hey! Rewrite in the new style. Your code will wind up looking very similar,
-  // but try not not reference your old code in writing the new style.
+ 
   var someInstance = {
     top: 0,
     stroage: {}
@@ -80,9 +77,31 @@ var extend = function(to, from) {
   }
 };
 
-if (typeof module === "object" && typeof module.exports === "object") {
-  module.exports = {
-    Stack,
-    stackMethods
-  };
-}
+
+// prototypal 방식 
+
+const Stack = function() {
+
+  var stackInstance = Object.create(stackMethods);
+  return stackInstance;
+};
+
+const stackMethods = {
+  storage: {},
+  top: 0
+};
+
+stackMethods.push = function(value) {
+  this.top++;
+  this.storage[this.top] = value;
+};
+stackMethods.pop = function() {
+  if (this.top === 0) {
+    return "empty";
+  }
+  this.top--;
+  return this.storage[this.top + 1];
+};
+stackMethods.size = function() {
+  return this.top;
+};
