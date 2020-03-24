@@ -48,8 +48,3 @@ const Node = function(value) {
   this.value = value;
   this.next = null;
 };
-
-/*
- * Complexity: What is the time complexity of the above functions?
- */
-module.exports = LinkedList;
