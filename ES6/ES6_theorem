@@ -1,0 +1,244 @@
+## 1. ES6 
+
+**What is ES6?**
+
+ES6는  ECMAScript6의 약자로서 자바스크립트의 버전의 이름입니다. ES6는 JavaScript에 풍부한 새로운 기능을 도입하는 동시에 이전 JavaScript와 완전히 역호환됩니다. 크롬과 같은 가장 인기 있는 웹 브라우저들 조차도 모든 ES6 기능을 이용하기 전에 해야 할 일이 엄청나지만, 많은 개발자들이 ES6를 많이 사용하고 있고 향후 몇 년안에  ES6를 더욱 많이 볼 수 있을거라 기대가 됩니다.
+
+ES6는 아직 보편적으로 웹브라우저에서 사용을 하고 있지 않습니다. 그렇기 때문에 호환성에 문제가 여럿있기 때문에 ES6가 어디에서 호환 되는지 잘 알아야 할 필요가 있습니다.
+
+ES5 syntax 구현을 ES6에서는 어떤식으로 하는지 포스팅을 해보겠습니다.
+
+## 2. Destructuring(구조 분해 할당)
+
+먼저 구조 분해 할당이란 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 자바스크립트의 표현식입니다. 
+
+이 표현식을 ES5와 ES6에서 어떤식으로 표현되는지 보겠습니다.
+
+
+### 1) 객체 구조 분해 할당
+
+**ES5** 
+
+```js
+var user = {
+  first:'Benji',
+  last:'Marinacci',
+  age:32
+};
+
+var first = user.first;
+var last = user.last;
+
+first; // -> 'Benji'
+```
+
+**ES6**
+
+```js
+var user = {
+  first: 'Benji',
+  last:'Marinacci'
+  age:32
+};
+
+var {first,last} = user;
+
+first; // -> 'Benji'
+```
+
+
+**ES5**
+
+```js
+var user = {
+  first:'Benji',
+  last:'Marinacci',
+  age:32
+};
+
+var greet = function (person) {
+  var first = person.first;
+  var last = person.last;
+  
+  console.log('Hi,' + first + '' + last);
+};
+
+greet(user); // 'Hi, Benji Marinacci'
+```
+
+**ES6**
+
+```js
+var user = {
+  first: 'Benji',
+  last:'Marinacci'
+  age:32
+};
+
+var greet = fucntion({first,last}) {
+  
+  console.log('Hi,' + first + '' + last);
+};
+
+greet(user); // -> 'Hi, Benji Marinacci'
+```
+
+
+
+### 2) 배열 구조 분해 할당
+
+**ES5** 
+
+```js
+var numbers = [1,2,3,4];
+
+var uno = numbers[0];
+var dos = numbers[1];
+var tres = numbers[2];
+
+uno; // -> 1
+```
+
+**ES6** 
+
+```js
+var numbers = [1,2,3,4];
+
+var [uno,dos,tres] = numbers;
+
+uno // -> 1
+```
+
+> 변수의 이름이 키와 매칭이 된다. 
+
+**ES5** 
+
+```js
+var number = [1,2,3,4];
+
+var countToTwo = function (numbers) {
+  var uno = numbers[0];
+  var dos = numbers[1];
+  
+  console.log(uno + ',' + dos);
+};
+
+countToTwo(numbers); // -> 1,2
+```
+
+**ES6** 
+
+```js
+var number = [1,2,3,4];
+
+var countToTwo = function ([uno,dos]) {
+  
+  console.log(uno + ',' + dos);
+};
+
+countToTwo(numbers); // -> 1,2
+```
+
+## 3.Spread Operator
+
+**ES5** 
+
+```js
+function someFunction(a,b,c,d){
+  // do something with a,b,c and d
+};
+
+var args = [1,2,4,16];
+
+someFunction.apply(null,args);
+```
+
+**ES6** 
+
+```js
+function someFunction(a,b,c,d){
+  // do something with a,b,c and d
+};
+
+var args = [1,2,4,16];
+
+someFunction(...args);
+```
+
+## 4. Rest Parameters
+
+**ES5** 
+
+```js
+var multiplyByNum = funciton (x) {
+  var nums = Array.prototype.slice.call(arguments,1);
+  nums.forEach(function(num) {
+    console.log(x * num);
+  });
+};
+```
+
+**ES6** 
+
+```js
+var multiplyByNum = funciton (x,...nums) {
+ nums.forEach(function(num) {
+   console.log(x * num);
+  });
+};
+```
+## 5.Default parameters
+
+**ES5**
+
+```js
+var generateAddress = function (city,state,country) {
+country = country === undefined ? 'USA' : country;
+return city + ',' + state.to.UpperCase() + ',' + country;
+};
+
+generateAddress ('Oakland','CA'); // -> 'Oakland, CA, USA'
+generateAddress ('Calgary','AB', 'Canada'); // -> 'Calgary, AB, Canada'
+```
+
+**ES6**
+
+```js
+var generateAddress = function (city,state,country = 'USA') {
+return city + ',' + state.to.UpperCase() + ',' + country;
+};
+
+generateAddress ('Oakland','CA'); // -> 'Oakland, CA, USA'
+generateAddress ('Calgary','AB', 'Canada'); // -> 'Calgary, AB, Canada'
+
+```
+
+## 6.Template Literals
+
+**ES5**
+
+```js
+var generateAddress = function (city, state, country) {
+  country = country === undefined ? 'USA' : country;
+  return city + ',' + state.toUpperCase() + ',' + country;
+};
+```
+
+**ES6**
+```js
+var generateAddress = function (city, state, country ='USA') {
+  return city + ',' + state.toUpperCase() + ',' + country;
+};
+```
+
+**ES6**
+```js
+var generateAddress = function (city, state, country ='USA') {
+  return `${city},${state.toUpperCase()},${country}`;
+};
+```
+![](https://images.velog.io/images/jangwonyoon/post/1b5e183b-f27a-4157-a95c-175da3a4fcd2/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202020-03-29%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.01.48.png)
+> ES6에서 backticks를 사용하여 표현이 가능합니다.
+
+
+
