@@ -157,15 +157,9 @@
       for (let i = 0; i < row.length; i++) {
         count = count + row[i];
       }
-      // 4. 1의 개수가 1개보다 많다면 충돌입니다.
-      if (count > 1) {
-        return true;
-      } else {
-        return false;
-      }
+      return count > 1
     },
 
-    // 1. 가로의 모든 충돌을 확인합니다.
     hasAnyRowConflicts: function() {
       const size = this.get("n");
 
